@@ -49,4 +49,42 @@ size_distribution %>%
   summarize(prob_4_or_more = sum(probability))
 
 
+# Continous Uniform Distribution
+
+# Min and max wait times for back-up that happens every 30 min
+min <- 0
+max <- 30
+
+# Calculate probability of waiting less than 5 mins
+prob_less_than_5 <- punif(5, min, max)
+prob_less_than_5
+
+# punif() function returns the probability of value from uniform distribution from lower tail giving min and 
+# max range of distribution
+
+# Calculate probability of waiting more than 5 mins
+prob_greater_than_5 <- punif(5, min, max, lower.tail = FALSE)
+prob_greater_than_5
+
+# Calculate probability of waiting 10-20 mins
+prob_between_10_and_20 <- punif(20, min, max) - punif(10, min, max)
+prob_between_10_and_20
+
+# There's a 33% chance that Amir will wait 10-20 minutes.
+
+
+# Set random seed to 334
+set.seed(334)
+
+wait_times <- data.frame(simulation_nb = 1:1000)
+
+# Generate 1000 wait times between 0 and 30 mins, save in time column
+wait_times %>%
+  mutate(time = runif(1000, min = 0, max = 30)) %>%
+  # Create a histogram of simulated times
+  ggplot(aes(time)) +
+  geom_histogram(bins = 30)
+
+
+#runif() takes number of time with min and max to generate numbers from uniform distribution
 
