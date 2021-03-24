@@ -106,6 +106,6 @@ pexp(4, rate = 0.4, lower.tail = FALSE)
 # Probability response takes 3-4 hours
 pexp(4, rate = 0.4) - pexp(3, rate = 0.4)
 
-# he t-distribution is not skewed, just like the normal distribution, but it does have thicker tails and higher variance than 
+# The t-distribution is not skewed, just like the normal distribution, but it does have thicker tails and higher variance than 
 # the normal distribution.
 
