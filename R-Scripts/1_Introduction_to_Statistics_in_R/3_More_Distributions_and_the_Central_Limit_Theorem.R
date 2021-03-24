@@ -73,14 +73,39 @@ mean(sample_means)
 mean(amir_deals$num_users)
 
 
+# Possion Distribution
+
+# Probability of 5 responses
+dpois(5, 4)
+
+# Probability of 5 responses from coworker
+dpois(5, 5.5)
+
+# Probability of 2 or fewer responses
+ppois(2, 4)
+
+# Probability of > 10 responses
+ppois(10, 4, lower.tail = FALSE)
+
+# Note that if you provide dpois() or ppois() with a non-integer, it returns 0 and throws a warning since the Poisson distribution
+# only applies to integers.
 
 
+# Exponential Distribution
+
+# rate = 1 / lambda
+
+# Probability response takes < 1 hour
+pexp(1, rate = 0.4)
 
 
+# Probability response takes > 4 hours
+pexp(4, rate = 0.4, lower.tail = FALSE)
 
 
+# Probability response takes 3-4 hours
+pexp(4, rate = 0.4) - pexp(3, rate = 0.4)
 
-
-
-
+# he t-distribution is not skewed, just like the normal distribution, but it does have thicker tails and higher variance than 
+# the normal distribution.
 
